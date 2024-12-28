@@ -1,27 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import scrollIntoView from "scroll-into-view-if-needed";
 
-const Navbar = () => {
+
+const NavBar = ({ refs }) => {
+    const scrollToSection = (ref) => {
+        if (ref && ref.current) {
+          scrollIntoView(ref.current, {
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      };
+      
+
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white w-full">
+    <nav className="fixed top-0 w-full bg-gray-800 text-white flex justify-between px-6 py-4 z-50">
       {/* Logo */}
-      <div className="text-2xl font-bold">
-        MyLogo
-      </div>
+      <div className="text-2xl font-bold">MyLogo</div>
 
-      {/* Center Links */}
-      <div className="hidden md:flex space-x-6">
-        <Link to="/about" className="hover:text-gray-400">About</Link>
-        <Link to="/my-works" className="hover:text-gray-400">My Works</Link>
-        <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+      {/* Navigation Links */}
+      <div className="flex space-x-6">
+        <button
+          onClick={() => scrollToSection(refs.aboutRef)}
+          className="hover:text-gray-400"
+        >
+          About
+        </button>
+        <button
+          onClick={() => scrollToSection(refs.workRef)}
+          className="hover:text-gray-400"
+        >
+          My Work
+        </button>
+        <button
+          onClick={() => scrollToSection(refs.contactRef)}
+          className="hover:text-gray-400"
+        >
+          Contact
+        </button>
       </div>
 
       {/* Resume Button */}
-      <Link to="/resume" className="hidden md:block px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded">
+      <a
+        href="/resume.pdf"
+        className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Resume
-      </Link>
+      </a>
     </nav>
   );
 };
 
-export default Navbar;
+
+export default NavBar;
