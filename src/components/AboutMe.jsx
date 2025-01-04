@@ -123,7 +123,6 @@ export default function AboutMe(props) {
             ></div>
 
             <div className="absolute w-5/6 h-5/6  rounded overflow-hidden">
-              {/* <div className="absolute w-full h-full group-hover:opacity-0 opacity-10 duration-300 rounded overflow-hidden"></div> */}
               <img
                 src={
                   "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
@@ -145,7 +144,6 @@ export default function AboutMe(props) {
                 alt="My Image Not Found"
               />
             </div>
-            {/* <div className="absolute w-48 h-full  bg-AAsecondary opacity-10 md:opacity-60  rounded overflow-hidden">sdfgsdgd ffsdfsd fsdf </div> */}
           </div>
         </div>
       </div>

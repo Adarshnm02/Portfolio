@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
-import Work from "./components/Work";
+import Works from "./components/Works";
 import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { motion } from 'framer-motion';
+
 
 const App = () => {
   // Refs for each section in the page
@@ -36,7 +38,7 @@ const App = () => {
           <main>
             <About ref={aboutRef} finishedLoading={finishedLoading} />
             <AboutMe />
-            <Work ref={workRef} />
+            <Works ref={workRef} />
             <Contact ref={contactRef} />
           </main>
         </div>
