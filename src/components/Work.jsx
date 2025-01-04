@@ -4,8 +4,8 @@ const Work = forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col justify-center items-center bg-gray-200 p-6"
-    >
+      className="min-h-screen text-[#ccd6f6] flex flex-col justify-center items-center p-6"
+    > 
       <h1 className="text-4xl font-bold">My Work</h1>
       <p className="mt-4 text-lg text-gray-600 text-center">
         Here are some of the projects I've worked on:

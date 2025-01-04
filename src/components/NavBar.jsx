@@ -12,7 +12,7 @@ const NavBar = ({ refs }) => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-[#0a192f] text-[#ccd6f6] flex justify-between items-center px-10 py-4 z-50 shadow-md">
+    <nav  className="fixed top-0 w-full text-[#ccd6f6] flex justify-between items-center px-10 py-4 z-50 shadow-md">
       {/* Logo */}
       <div className="text-2xl font-bold text-[#64ffda]">A</div>
 

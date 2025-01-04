@@ -4,7 +4,7 @@ const Contact = forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col justify-center items-center bg-gray-300 p-6"
+      className="min-h-screen text-[#ccd6f6] flex flex-col justify-center items-center p-6"
     >
       <h1 className="text-4xl font-bold">Contact Me</h1>
       <p className="mt-4 text-lg text-gray-600 text-center">
