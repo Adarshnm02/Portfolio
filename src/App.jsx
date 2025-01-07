@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 
 const App = () => {
   // Refs for each section in the page
+  const heroRef = useRef(null)
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
@@ -34,10 +35,10 @@ const App = () => {
         </div>
       ) : (
         <div className="bg-[#0a192f]">
-          <NavBar refs={{ aboutRef, workRef, contactRef }} />
+          <NavBar refs={{heroRef, aboutRef, workRef, contactRef }} />
           <main>
-            <About ref={aboutRef} finishedLoading={finishedLoading} />
-            <AboutMe />
+            <About ref={heroRef} finishedLoading={finishedLoading} />
+            <AboutMe ref={aboutRef} />
             <Works ref={workRef} />
             <Contact ref={contactRef} />
           </main>

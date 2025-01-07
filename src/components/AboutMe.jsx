@@ -1,6 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-export default function AboutMe(props) {
+
+
+const AboutMe = forwardRef((props, ref) => {
   const technologies = [
     [
       "Nextjs/React",
@@ -15,6 +17,7 @@ export default function AboutMe(props) {
     <div
       id="aboutSection"
       data-aos="fade-up"
+      ref={ref}
       className="snap-start flex flex-col  items-center py-20"
     >
       {/* // ? 0.1 About Me */}
@@ -37,13 +40,11 @@ export default function AboutMe(props) {
             <div className="font-Header text-justify">
               <span className="text-gray-400 ">
                 Hello! My name is Adarsh NM, and I&apos;m a passionate{" "}
-                <span className="text-blue-400">
-                  Full Stack Web Developer
-                </span>{" "}
+                <span className="text-blue-400">Full Stack Web Developer</span>{" "}
                 with strong problem-solving skills. My journey in computer
-                science started at 2 years old when I explored c programing language, which started my interest in programming.
-                Over the years, I continued to teach myself coding, which led me
-                to an{" "}
+                science started at 2 years old when I explored c programing
+                language, which started my interest in programming. Over the
+                years, I continued to teach myself coding, which led me to an{" "}
                 <span className="text-blue-400">Full Stack Developer</span> and
                 afterward a second degree in{" "}
                 <span className="text-blue-400">
@@ -64,9 +65,9 @@ export default function AboutMe(props) {
                 others, including transportation and international companies. At
                 FeverTokens, I led the development of an innovative NFT
                 marketplace, and at Vision, which is the{" "}
-                <span className="text-blue-400">second-largest market</span>{" "}
-                in the world for <span className="text-blue-400">ENS</span>,
-                I led the development of their new NameWrapper release.
+                <span className="text-blue-400">second-largest market</span> in
+                the world for <span className="text-blue-400">ENS</span>, I led
+                the development of their new NameWrapper release.
               </span>
             </div>
 
@@ -86,7 +87,7 @@ export default function AboutMe(props) {
                         key={index}
                         className="flex flex-row items-center space-x-2"
                       >
-                        <MdKeyboardArrowRight className="text-gray-400"/>
+                        <MdKeyboardArrowRight className="text-gray-400" />
                         <span className="text-gray-400 sm:text-sm text-xs">
                           {tech}
                         </span>
@@ -103,7 +104,7 @@ export default function AboutMe(props) {
                         key={index}
                         className="flex flex-row items-center space-x-2"
                       >
-                        <MdKeyboardArrowRight className="text-gray-400"/>
+                        <MdKeyboardArrowRight className="text-gray-400" />
                         <span className="text-gray-400 sm:text-sm text-xs">
                           {tech}
                         </span>
@@ -149,4 +150,6 @@ export default function AboutMe(props) {
       </div>
     </div>
   );
-}
+});
+
+export default AboutMe;

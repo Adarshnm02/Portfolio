@@ -14,7 +14,7 @@ const NavBar = ({ refs }) => {
   return (
     <nav  className="fixed top-0 w-full text-[#ccd6f6] flex justify-between items-center px-10 py-4 z-50 shadow-md">
       {/* Logo */}
-      <div className="text-2xl font-bold text-[#64ffda]">A</div>
+      <div className="text-2xl font-bold text-[#64ffda]" onClick={() => scrollToSection(refs.heroRef)}>A</div>
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-6 text-sm font-medium">

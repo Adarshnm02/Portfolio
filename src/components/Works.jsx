@@ -1,10 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
-export default function Works() {
+const Works = forwardRef((props, ref) => {
   return (
     <div
+      ref={ref}
       id="SomethingIveBuiltSection"
       className=" flex flex-col xl:space-y-28 space-y-12 w-full  
      2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
@@ -298,4 +299,6 @@ export default function Works() {
       </div>
     </div>
   );
-}
+})
+
+export default Works
