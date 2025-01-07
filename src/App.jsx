@@ -7,11 +7,9 @@ import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { motion } from 'framer-motion';
 
 
 const App = () => {
-  // Refs for each section in the page
   const heroRef = useRef(null)
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -22,19 +20,19 @@ const App = () => {
     setTimeout(() => {
       setFinishedLoading(true);
     }, 3000);
-  }, []);  
+  }, []);
   useEffect(() => {
     Aos.init({ duration: 2000, once: true });
   }, []);
 
   return (
-    <Router className="bg-[#0a192f] min-h-screen text-[#ccd6f6]">
+    <Router>
       {!finishedLoading ? (
         <div className="flex justify-center items-center h-screen">
           <h1>Loding...</h1>
         </div>
       ) : (
-        <div className="bg-[#0a192f]">
+        <div className="bg-[#0a192f] ">
           <NavBar refs={{heroRef, aboutRef, workRef, contactRef }} />
           <main>
             <About ref={heroRef} finishedLoading={finishedLoading} />

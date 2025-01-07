@@ -1,0 +1,24 @@
+[
+    {
+        "projectName": "TechWiz",
+        "projectUrl": "https://techwiz-s8jl.onrender.com/",
+        "projectTitle": "TechWiz: Your Ultimate Destination for Cutting-Edge Tech Products",
+        "description": "Welcome to TechWiz, where innovation meets convenience. Explore a wide range of the latest tech products, from high-performance gadgets to smart devices, all curated to enhance your digital lifestyle. At TechWiz, we prioritize quality, affordability, and user satisfaction. Our platform is designed to provide a seamless shopping experience with intuitive navigation, secure payment options, and prompt delivery services. Whether you're a tech enthusiast or someone looking for reliable devices to simplify daily tasks, TechWiz is your one-stop shop for all things tech. Stay ahead in the digital world with products that redefine the way you live and work",
+        "highlightWords": ["TechWiz", "Seamless shopping experience", "Tech Products", "Secure payment options","One-stop shop for all things tech" ],
+        "imageUrl": "/images/TechWiz.png",
+        "technologies": ["Node.js", "Express", "MongoDB", "CSS", "Razorpay", "JWT Authentication", "nodemailer", "mongoose"],
+        "githubLink": "https://github.com/Adarshnm02/TechWiz"
+      },
+      {
+        "projectName": "Netflix",
+        "projectUrl": "https://netflix-clone-nine-mauve.vercel.app/",
+        "projectTitle": "Netflix Clone: Movie Streaming and Discovery Platform",
+        "description": "The Netflix Clone allows users to browse and view a selection of movies, access detailed information about each movie, and watch trailers. With a clean and simple interface, users can easily navigate through the movie collection and enjoy a seamless viewing experience. This clone project focuses on movie discovery with essential features for a dynamic and interactive platform.",
+        "highlightWords": ["Netflix", "movies", "watch trailers"],
+        "imageUrl": "/images/NetflixClone.png",
+        "technologies": ["React", "Tailwind CSS", "Firebase", "TMDB"],
+        "githubLink": "https://github.com/Adarshnm02/Netflix_Clone"
+      }
+      
+      
+]
