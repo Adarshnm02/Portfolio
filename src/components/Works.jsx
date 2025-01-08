@@ -117,7 +117,7 @@ const Works = forwardRef((props, ref) => {
         </div>
 
         <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5 col-span-8 flex flex-col items-start space-y-3 md:order-1">
-          <div className="flex flex-col space-y-1 z-10">
+          <div className="flex flex-col space-y-1 z-10 ml-auto">
             <span className="text-gray-400 text-base font-medium">{project.projectName}</span>
             <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
               <span className="text-slate-200 hover:text-teal-300 font-bold text-xl transition-colors duration-300">
@@ -130,7 +130,7 @@ const Works = forwardRef((props, ref) => {
               {highlightText(project.description, project.highlightWords)}
             </p>
           </div>
-          <ul className="flex ml-3 mr-3 md:mr-3 flex-wrap w-full text-slate-400 text-sm font-medium ">
+          <ul className="flex ml-3 mr-3 md:mr-3 flex-wrap w-full text-slate-400 text-sm font-medium justify-end">
             {project.technologies.map((item, techIndex) => (
               <span key={techIndex} className="pr-4 z-10 hover:text-teal-300 transition-colors duration-300 cursor-pointer">
                 {item}

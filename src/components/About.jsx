@@ -22,7 +22,7 @@ const About = forwardRef((props, ref) => {
         are not only functional but also provide exceptional user experiences.
       </p>
 
-      <a>
+      <a href="/Resume.pdf">
         <button className="border rounded px-4 sm:px-8 py-3 sm:py-4">
           Check out my resume!
         </button>
