@@ -62,7 +62,7 @@ const Contact = forwardRef((props, ref) => {
             className="font-mono text-sm text-gray-300 border-gray-300 
               px-8 py-4 border-[1.5px] rounded"
           >
-            Chat on WhatsApp
+            Say Hi
           </button>
         </a>
       </div>

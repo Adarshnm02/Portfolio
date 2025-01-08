@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import LoadingAnimation from "./components/LoadingAnimation";
 
 
 const App = () => {
@@ -28,9 +29,7 @@ const App = () => {
   return (
     <Router>
       {!finishedLoading ? (
-        <div className="flex justify-center items-center h-screen">
-          <h1>Loding...</h1>
-        </div>
+        <LoadingAnimation/>
       ) : (
         <div className="bg-[#0a192f] ">
           <NavBar refs={{heroRef, aboutRef, workRef, contactRef }} />
