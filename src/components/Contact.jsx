@@ -9,9 +9,9 @@ const Contact = forwardRef((props, ref) => {
   //   message
   // )}`;
 
-  const email = 'your-email@example.com'; // Replace with your email address
-  const subject = 'Hello'; // Default subject
-  const body = 'I would like to get in touch!'; // Default body message
+  const email = 'adarshnm02@gmail.com';
+  const subject = "Let's Connect"; 
+  const body = `Hi Adarsh,%0D%0A%0D%0AI hope you're doing well. I came across your portfolio and wanted to reach out. Looking forward to connecting and having a conversation!%0D%0A%0D%0ABest regards,%0D%0A[Your Name]`; 
 
   // Construct the mailto link
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -27,7 +27,7 @@ const Contact = forwardRef((props, ref) => {
       {/* Title */}
       <div className="flex flex-row items-center">
         <div className="flex flex-row space-x-2 items-center">
-          <span className="text-gray-300 text-sm sm:text-base">04.</span>
+          {/* <span className="text-gray-300 text-sm sm:text-base">04.</span> */}
           <span className="font-sans text-gray-300 text-base">
             What&apos;s Next?
           </span>

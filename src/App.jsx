@@ -8,6 +8,7 @@ import AboutMe from "./components/AboutMe";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import LoadingAnimation from "./components/LoadingAnimation";
+import Skills from "./components/Skills";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
+  const techRef = useRef(null)
 
   const [finishedLoading, setFinishedLoading] = useState(false);
   useEffect(() => {
@@ -32,10 +34,11 @@ const App = () => {
         <LoadingAnimation/>
       ) : (
         <div className="bg-[#0a192f] ">
-          <NavBar refs={{heroRef, aboutRef, workRef, contactRef }} />
+          <NavBar refs={{heroRef, aboutRef, workRef, contactRef, techRef }} />
           <main>
             <About ref={heroRef} finishedLoading={finishedLoading} />
             <AboutMe ref={aboutRef} />
+            <Skills ref={techRef}/>
             <Works ref={workRef} />
             <Contact ref={contactRef} />
           </main>

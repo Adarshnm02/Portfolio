@@ -1,11 +1,20 @@
-import React, { forwardRef, useEffect, useState } from "react";
-import { MdKeyboardArrowRight } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
-import { GoLinkExternal } from "react-icons/go";
-
+import React, { forwardRef, useState, useEffect, useRef } from "react";
+import {
+  Github,
+  ExternalLink,
+  Star,
+  Blocks,
+  Cpu,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const Works = forwardRef((props, ref) => {
   const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+
   useEffect(() => {
     fetch("/Projects.json")
       .then((response) => {
@@ -16,163 +25,252 @@ const Works = forwardRef((props, ref) => {
       })
       .then((data) => {
         setProjects(data);
-        console.log("Json Data :", data);
+        setSelectedProject(data[0]); // Set the first project as selected
       })
       .catch((error) => console.error("Error loading the JSON file:", error));
   }, []);
 
-  const highlightText = (text, highlightWords) => {
-    if (!highlightWords || !Array.isArray(highlightWords)) return text;
+  useEffect(() => {
+    if (projects.length > 0) {
+      const interval = setInterval(() => {
+        handleNextProject();
+      }, 6000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, projects]);
 
-    let result = text;
-    highlightWords.forEach(word => {
-      const regex = new RegExp(`(${word})`, 'gi');
-      result = result.replace(regex, '<span class="text-teal-500 font-medium">$1</span>');
-    });
-    return <span dangerouslySetInnerHTML={{ __html: result }} />;
+  const handleProjectClick = (project, index) => {
+    setSelectedProject(project);
+    setCurrentIndex(index);
+    scrollToProject(index);
   };
 
-  const renderProjectStyle1 = (project, index) => (
-    <div key={index} data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96 ">
-          {/* Left image */}
-         
-          <div className="hidden bg-[#0a192f] z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
-            <div className="relative rounded w-full h-full col-start-6 col-span-7 ">
-              
-              <a href={project.projectUrl} target="_blank" rel="noreferrer">
-                <div className="absolute w-full h-full rounded bg-slate-900/60 opacity-50 hover:bg-slate-900/0 hover:opacity-0 hover:cursor-pointer transition-opacity duration-300"></div>
-                
-              </a>
-              
-              <img src={project.imageUrl} alt="Project Screen shot" className="w-full rounded-3xl h-full object-cover" />
-            </div>
+  const handlePrevProject = () => {
+    const newIndex = (currentIndex - 1 + projects.length) % projects.length;
+    setCurrentIndex(newIndex);
+    setSelectedProject(projects[newIndex]);
+    scrollToProject(newIndex);
+  };
+
+  const handleNextProject = () => {
+    const newIndex = (currentIndex + 1) % projects.length;
+    setCurrentIndex(newIndex);
+    setSelectedProject(projects[newIndex]);
+    scrollToProject(newIndex);
+  };
+
+  const scrollToProject = (index) => {
+    const container = scrollContainerRef.current;
+    if (container && container.children[index]) {
+      const projectElement = container.children[index];
+      const scrollPosition =
+        projectElement.offsetLeft -
+        container.offsetWidth / 2 +
+        projectElement.offsetWidth / 2;
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScrollLeft = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const handleScrollRight = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
+  // If projects haven't loaded yet or no project is selected, show loading state
+  if (projects.length === 0 || !selectedProject) {
+    return (
+      <div className="min-h-screen bg-[#0a192f] text-white flex items-center justify-center">
+        <div className="text-xl">Loading projects...</div>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={ref} className="min-h-screen bg-[#0a192f] text-white">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="flex flex-row items-center mr-4">
+          <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider text-lg sm:text-2xl pl-2 ">
+            Works
+          </span>
+          <div className="bg-gray-400 h-[0.2px] w-full sm:w-72 ml-4"></div>
+        </div>
+
+        {/* Project List */}
+        <div className="relative mb-12 mt-5">
+          <button
+            onClick={handleScrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#112240] rounded-full hover:bg-[#1d3a6d] transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <div
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-6 py-4 px-12 scroll-smooth hide-scrollbar"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                onClick={() => handleProjectClick(project, index)}
+                className={`flex-none w-[300px] bg-[#112240] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${
+                  index === currentIndex
+                    ? "ring-2 ring-purple-500 scale-105"
+                    : "hover:ring-2 hover:ring-purple-500/50"
+                }`}
+              >
+                <div className="relative h-48">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#112240] to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-lg font-semibold mb-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">{project.subtitle}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+          <button
+            onClick={handleScrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#112240] rounded-full hover:bg-[#1d3a6d] transition-colors"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
 
-          {/* right Content */}
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            {/* background for text in mobile responsive */}
-            
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-              <div className="relative w-full h-full">
-                {/* Decrease visibility by adding opacity */}
-                <img src={project.imageUrl} alt="Project Screen shot" className="w-full h-full rounded-3xl  opacity-10 transition-opacity duration-300 "/>
+        {/* Selected Project Details */}
+        <div className="relative bg-[#112240] rounded-xl p-8 mb-12 transition-all duration-300">
+          <button
+            onClick={handlePrevProject}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#1d3a6d] rounded-full hover:bg-[#2a4d8a] transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main Project Image */}
+            <div className="lg:col-span-1">
+              <div className="aspect-video rounded-xl overflow-hidden mb-4">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {selectedProject.thumbnails.map((thumb, index) => (
+                  <div
+                    key={index}
+                    className="aspect-video rounded-lg overflow-hidden"
+                  >
+                    <img
+                      src={thumb}
+                      alt={`${selectedProject.title} thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
-              
-              <div className="flex flex-col space-y-1  z-10">
-                <span className="text-gray-400 text-base font-medium">{project.projectName}</span>
-                  <a href={project.projectUrl} target="_blank"rel="noopener noreferrer">
-                    <span className="text-slate-200 hover:text-teal-300 font-bold text-xl transition-colors duration-300">
-                      {project.projectTitle}
-                    </span>
-                   </a>
-              </div>
-
-              <div className="w-full bg-slate-800/80 backdrop-blur-sm rounded-md py-6 md:p-6 z-10 shadow-lg">
-                <p className=" text-slate-300 md:text-slate-300 text-left p-3">
-                  {highlightText(project.description, project.highlightWords)}
+            {/* Project Information */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Story Section */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Star className="w-5 h-5 text-purple-400" />
+                  <h2 className="text-xl font-semibold">Story</h2>
+                </div>
+                <p className="text-gray-400 leading-relaxed">
+                  {selectedProject.story}
                 </p>
               </div>
 
-              <ul className="flex ml-3 flex-wrap w-full text-slate-400 text-sm font-medium md:justify-start">
-                {project.technologies.map((item, techIndex) => (
-                      <span key={techIndex} className="pr-4 z-10 hover:text-teal-300 transition-colors duration-300 cursor-pointer">
-                        {item}
-                      </span>
-                    ))}
-              </ul>
+              {/* Features Section */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Blocks className="w-5 h-5 text-purple-400" />
+                  <h2 className="text-xl font-semibold">Features</h2>
+                </div>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {selectedProject.features.map((feature, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-2 text-gray-400"
+                    >
+                      <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <div className="z-10 flex fle-row ml-auto mr-3 md:ml-3 space-x-5">
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer"><FaGithub className=" text-slate-400 hover:text-teal-600 size-5 "/></a>
-                <a href={project.projectUrl} target={"_blank"} rel="noreferrer"><GoLinkExternal className=" text-slate-400 hover:text-teal-600 size-5"/></a>
+              {/* Tech Stack Section */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Cpu className="w-5 h-5 text-purple-400" />
+                  <h2 className="text-xl font-semibold">Tech Stack</h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-[#1d3a6d] text-gray-300 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 pt-4">
+                <a
+                  href={selectedProject.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg transition-colors"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Live Preview
+                </a>
+                <a
+                  href={selectedProject.sourceLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#1d3a6d] hover:bg-[#2a4d8a] px-6 py-3 rounded-lg transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                  View Source
+                </a>
               </div>
             </div>
           </div>
+
+          <button
+            onClick={handleNextProject}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-[#1d3a6d] rounded-full hover:bg-[#2a4d8a] transition-colors"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
-  )
-
-  const renderProjectStyle2 = (project, index) => (
-    <div key={index} data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96 ">
-      {/* Left image */}
-      <div className="hidden bg-[#0a192f] z-10  py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
-        <div className="relative rounded w-full h-full col-span-7 ">
-          <a href={project.projectUrl} target={"_blank"} rel="noreferrer">
-            <div className="absolute w-full h-full rounded bg-slate-900/60 opacity-50 hover:bg-slate-900/0 hover:opacity-0 hover:cursor-pointer transition-opacity duration-300"></div>
-          </a>
-
-          <img src={project.imageUrl} alt="Project Screen shot" className="w-full rounded-3xl h-full object-cover" />
-        </div>
-      </div>
-
-      {/* right Content */}
-      <div className=" md:absolute py-4 md:grid md:grid-cols-12 w-full h-full  content-center ">
-        {/* background for text in mobile responsive */}
-        <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-          <div className="relative w-full h-full">
-            {/* <div className="absolute w-full h-full opacity-10 z-10"></div> */}
-            <img src={project.imageUrl} alt="Project Screen shot"className="w-full h-full rounded-3xl opacity-10 transition-opacity duration-300 "/>
-          </div>
-        </div>
-
-        <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5 col-span-8 flex flex-col items-start space-y-3 md:order-1">
-          <div className="flex flex-col space-y-1 z-10 ml-auto">
-            <span className="text-gray-400 text-base font-medium">{project.projectName}</span>
-            <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-              <span className="text-slate-200 hover:text-teal-300 font-bold text-xl transition-colors duration-300">
-                {project.projectTitle}
-              </span>
-            </a>
-          </div>
-          <div className="w-full bg-slate-800/80 backdrop-blur-sm rounded-md py-6 md:p-6 z-10 shadow-lg">
-            <p className="text-slate-300 md:text-slate-300 text-left  p-3 ">
-              {highlightText(project.description, project.highlightWords)}
-            </p>
-          </div>
-          <ul className="flex ml-3 mr-3 md:mr-3 flex-wrap w-full text-slate-400 text-sm font-medium justify-end">
-            {project.technologies.map((item, techIndex) => (
-              <span key={techIndex} className="pr-4 z-10 hover:text-teal-300 transition-colors duration-300 cursor-pointer">
-                {item}
-              </span>
-            ))}
-          </ul>
-          <div className="z-10 flex flex-row ml-auto mr-3 space-x-5">
-            <a href={project.githubLink} target="_blank" rel="noopener noreferrer"><FaGithub className="text-slate-400 hover:text-teal-600 size-5"/></a>
-            <a href={project.projectUrl} target={"_blank"} rel="noreferrer"><GoLinkExternal className="text-slate-400 hover:text-teal-600 size-5"/></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-   )
-
-
-  
-  
-  return (
-    <div ref={ref} className=" flex flex-col xl:space-y-28 space-y-12 w-full 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4">
-      <div data-aos="fade-up" className=" flex flex-row items-center md:px-0">
-        <MdKeyboardArrowRight className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px]"} />
-        <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className="font-sans text-sm  sm:text-xl"> 03.</span>
-          <span className=" font-bold tracking-wider text-gray-200 text-lg md:text-2xl w-44 md:w-56 opacity-85">
-            {" "}
-            Some Things I&apos;ve Built
-          </span>
-        </div>
-        <div className="bg-gray-400 h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
-      </div>
-
-
-      <div className="flex flex-col xl:space-y-36 space-y-8 md:space-y-28">
-        {projects.length > 0 ? (
-          projects.map((project, index) => 
-            index % 2 === 0 ? renderProjectStyle1(project, index) : renderProjectStyle2(project, index)
-          )
-        ) : (
-          <p>Loading projects...</p>
-        )}
       </div>
     </div>
   );

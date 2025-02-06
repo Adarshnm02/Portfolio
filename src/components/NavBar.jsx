@@ -26,10 +26,16 @@ const NavBar = ({ refs }) => {
             <span className="text-[#64ffda]">01.</span> About
           </button>
           <button
+            onClick={() => scrollToSection(refs.techRef)}
+            className="hover:text-[#64ffda] transition-colors duration-200"
+          >
+            <span className="text-[#64ffda]">02.</span> Skills
+          </button>
+          <button
             onClick={() => scrollToSection(refs.workRef)}
             className="hover:text-[#64ffda] transition-colors duration-200"
           >
-            <span className="text-[#64ffda]">02.</span> Work
+            <span className="text-[#64ffda]">03.</span> Work
           </button>
           <button
             onClick={() => scrollToSection(refs.contactRef)}

@@ -1,24 +1,135 @@
+
 [
-    {
-        "projectName": "TechWiz",
-        "projectUrl": "https://techwiz-s8jl.onrender.com/",
-        "projectTitle": "Your Ultimate Destination for Cutting-Edge Tech Products",
-        "description": "Welcome to TechWiz, where innovation meets convenience. Explore a wide range of the latest tech products, from high-performance gadgets to smart devices, all curated to enhance your digital lifestyle. At TechWiz, we prioritize quality, affordability, and user satisfaction. Our platform is designed to provide a seamless shopping experience with intuitive navigation, secure payment options, and prompt delivery services. Whether you're a tech enthusiast or someone looking for reliable devices to simplify daily tasks, TechWiz is your one-stop shop for all things tech. Stay ahead in the digital world with products that redefine the way you live and work",
-        "highlightWords": ["TechWiz", "Seamless shopping experience", "Tech Products", "Secure payment options","One-stop shop for all things tech" ],
-        "imageUrl": "/images/TechWiz.png",
-        "technologies": ["Node.js", "Express", "MongoDB", "CSS", "Razorpay", "JWT Authentication", "nodemailer", "mongoose"],
-        "githubLink": "https://github.com/Adarshnm02/TechWiz"
-      },
-      {
-        "projectName": "Netflix",
-        "projectUrl": "https://netflix-clone-nine-mauve.vercel.app/",
-        "projectTitle": "Netflix Clone: Movie Streaming and Discovery Platform",
-        "description": "The Netflix Clone allows users to browse and view a selection of movies, access detailed information about each movie, and watch trailers. With a clean and simple interface, users can easily navigate through the movie collection and enjoy a seamless viewing experience. This clone project focuses on movie discovery with essential features for a dynamic and interactive platform.",
-        "highlightWords": ["Netflix", "movies", "watch trailers"],
-        "imageUrl": "/images/NetflixClone.png",
-        "technologies": ["React", "Tailwind CSS", "Firebase", "TMDB"],
-        "githubLink": "https://github.com/Adarshnm02/Netflix_Clone"
-      }
-      
-      
+  {
+    "id": "1",
+    "title": "E-Commerce Platform",
+    "subtitle": "Full-featured online shopping solution",
+    "description": "A comprehensive e-commerce platform with real-time inventory management.",
+    "story": "When we noticed the growing need for sophisticated e-commerce solutions, we developed this platform to address common pain points in online retail. The project began as a simple storefront but evolved into a full-featured solution that now serves thousands of merchants worldwide.",
+    "features": [
+      "Real-time inventory tracking",
+      "AI-powered recommendations",
+      "Multi-currency support",
+      "Advanced analytics dashboard",
+      "Automated email marketing"
+    ],
+    "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["React", "Node.js", "MongoDB", "Redis", "AWS"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  },
+  {
+    "id": "2",
+    "title": "AI Task Manager",
+    "subtitle": "Smart productivity enhancement tool",
+    "description": "ML-powered task management system for automated prioritization.",
+    "story": "The AI Task Manager emerged from our team's frustration with existing productivity tools. We wanted to create something that not only tracks tasks but actively helps users make better decisions about their time and priorities.",
+    "features": [
+      "ML-based task prioritization",
+      "Smart deadline predictions",
+      "Team collaboration tools",
+      "Performance analytics",
+      "Integration with popular tools"
+    ],
+    "image": "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  },
+  {
+    "id": "3",
+    "title": "Social Media Dashboard",
+    "subtitle": "Analytics and management platform",
+    "description": "Comprehensive social media management and analytics platform.",
+    "story": "Created to help businesses better understand and manage their social media presence across multiple platforms. This dashboard provides real-time analytics and engagement metrics.",
+    "features": [
+      "Cross-platform analytics",
+      "Engagement tracking",
+      "Content scheduling",
+      "Automated reporting",
+      "Sentiment analysis"
+    ],
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["Vue.js", "GraphQL", "Node.js", "PostgreSQL", "Redis"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  },
+  {
+    "id": "4",
+    "title": "Virtual Classroom",
+    "subtitle": "Interactive learning platform",
+    "description": "Real-time virtual classroom with interactive features.",
+    "story": "Developed during the pandemic to facilitate remote learning, this platform provides an immersive virtual classroom experience with real-time interaction capabilities.",
+    "features": [
+      "Live video streaming",
+      "Interactive whiteboard",
+      "Breakout rooms",
+      "Resource sharing",
+      "Progress tracking"
+    ],
+    "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["React", "WebRTC", "Socket.io", "Express", "MongoDB"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  },
+  {
+    "id": "5",
+    "title": "Smart Home Hub",
+    "subtitle": "IoT device management system",
+    "description": "Centralized smart home device control and automation.",
+    "story": "Built to simplify smart home device management, this hub provides a unified interface for controlling and automating various IoT devices throughout the home.",
+    "features": [
+      "Device automation",
+      "Energy monitoring",
+      "Voice control",
+      "Scene creation",
+      "Security management"
+    ],
+    "image": "https://images.unsplash.com/photo-1558002038-bb4237b29133?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1558002038-bb4237b29133?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["React Native", "Node.js", "MQTT", "MongoDB", "Redis"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  },
+  {
+    "id": "6",
+    "title": "Financial Analytics",
+    "subtitle": "Investment tracking platform",
+    "description": "Advanced financial analytics and portfolio management.",
+    "story": "Designed for investors and financial advisors, this platform provides comprehensive analytics and visualization tools for making informed investment decisions.",
+    "features": [
+      "Portfolio tracking",
+      "Risk analysis",
+      "Market predictions",
+      "Custom alerts",
+      "Report generation"
+    ],
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1600",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=400"
+    ],
+    "technologies": ["Angular", "D3.js", "Python", "FastAPI", "TimescaleDB"],
+    "demoLink": "https://demo.example.com",
+    "sourceLink": "https://github.com/example/project"
+  }
 ]
