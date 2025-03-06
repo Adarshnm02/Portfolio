@@ -6,17 +6,17 @@ const About = forwardRef((props, ref) => {
     {
       name: "GitHub",
       icon: <Github className="w-5 h-5" />,
-      url: "https://github.com/yourusername"
+      url: "https://github.com/Adarshnm02"
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
-      url: "https://linkedin.com/in/yourusername"
+      url: "https://www.linkedin.com/in/adarshnm02/"
     },
     {
       name: "Email",
       icon: <Mail className="w-5 h-5" />,
-      url: "mailto:your.email@example.com"
+      url: "mailto:adarshnm02@gmail.com"
     }
   ];
 
@@ -51,7 +51,7 @@ const About = forwardRef((props, ref) => {
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
         <a 
-          href="/Resume.pdf"
+          href="/Adarsh_NM.pdf"
           className="group flex items-center gap-2 border border-[#64ffda] text-[#64ffda] rounded px-6 py-3 hover:bg-[#64ffda]/10 transition-colors"
         >
           <FileText className="w-5 h-5" />
@@ -75,11 +75,11 @@ const About = forwardRef((props, ref) => {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
+      {/* <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
         <div className="w-6 h-10 border-2 border-[#64ffda] rounded-full flex justify-center">
           <div className="w-1 h-2 bg-[#64ffda] rounded-full mt-2"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 });

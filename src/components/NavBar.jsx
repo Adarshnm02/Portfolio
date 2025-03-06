@@ -47,7 +47,7 @@ const NavBar = ({ refs }) => {
 
         {/* Resume Button */}
         <a
-          href="/Resume.pdf"
+          href="/Adarsh_NM.pdf"
           className="text-sm px-4 py-2 border border-[#64ffda] text-[#64ffda] rounded hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-200"
           target="_blank"
           rel="noopener noreferrer"

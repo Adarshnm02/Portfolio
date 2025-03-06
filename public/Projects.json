@@ -2,134 +2,205 @@
 [
   {
     "id": "1",
-    "title": "E-Commerce Platform",
-    "subtitle": "Full-featured online shopping solution",
-    "description": "A comprehensive e-commerce platform with real-time inventory management.",
-    "story": "When we noticed the growing need for sophisticated e-commerce solutions, we developed this platform to address common pain points in online retail. The project began as a simple storefront but evolved into a full-featured solution that now serves thousands of merchants worldwide.",
+    "title": "TechWiz E-Commerce",
+    "subtitle": "Performance-Focused Electronics Store",
+    "description": "A comprehensive e-commerce platform for electronics (mobiles, laptops, accessories) emphasizing security, scalability, and user-friendly design.",
+    "story": "TechWiz began as a small-scale storefront but evolved into a fully featured platform. We integrated secure payment processing, user-friendly checkout, and robust product management to address common challenges in electronics e-commerce. Today, it offers a seamless experience for customers and merchants alike.",
     "features": [
-      "Real-time inventory tracking",
-      "AI-powered recommendations",
-      "Multi-currency support",
-      "Advanced analytics dashboard",
-      "Automated email marketing"
+      "Secure Razorpay integration",
+      "Coupon management and wallet refunds",
+      "Detailed sales charts for performance analysis",
+      "User-friendly, mobile-first interface",
+      "Order tracking with real-time updates"
     ],
-    "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/TechWiz.png",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=400"
+      "/images/TechWiz.png",
+      "/images/TechWiz.png"
     ],
-    "technologies": ["React", "Node.js", "MongoDB", "Redis", "AWS"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "EJS",
+      "Bootstrap",
+      "Fetch"
+    ],
+    "demoLink": "https://techwiz-s8jl.onrender.com/",
+    "sourceLink": "https://github.com/Adarshnm02/TechWiz"
   },
   {
     "id": "2",
-    "title": "AI Task Manager",
-    "subtitle": "Smart productivity enhancement tool",
-    "description": "ML-powered task management system for automated prioritization.",
-    "story": "The AI Task Manager emerged from our team's frustration with existing productivity tools. We wanted to create something that not only tracks tasks but actively helps users make better decisions about their time and priorities.",
+    "title": "DishDiary",
+    "subtitle": "Global Recipe Discovery",
+    "description": "A modern web application that helps users discover and explore recipes from various cuisines worldwide.",
+    "story": "DishDiary began as a simple recipe finder but quickly evolved into a fully interactive platform. With category-based browsing, detailed cooking instructions, and mobile-first design, DishDiary aims to make culinary exploration fun and engaging for all food enthusiasts.",
     "features": [
-      "ML-based task prioritization",
-      "Smart deadline predictions",
-      "Team collaboration tools",
-      "Performance analytics",
-      "Integration with popular tools"
+      "Category-based recipe browsing",
+      "Detailed cooking instructions and ingredient lists",
+      "Search functionality with pagination",
+      "Interactive UI with smooth animations",
+      "Responsive design for all devices"
     ],
-    "image": "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/Dish_Diary_Home_Page.png",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=400"
+      "/images/Dish_Diary_Explore_Page.png",
+      "/images/Dish_Diary_Recipie_Page.png"
     ],
-    "technologies": ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Lucide React",
+      "Framer Motion",
+      "React Router DOM",
+      "Axios",
+      "TheMealDB"
+    ],
+    "demoLink": "https://dish-diary-seven.vercel.app/",
+    "sourceLink": "https://github.com/Adarshnm02/DishDiary"
   },
   {
     "id": "3",
-    "title": "Social Media Dashboard",
-    "subtitle": "Analytics and management platform",
-    "description": "Comprehensive social media management and analytics platform.",
-    "story": "Created to help businesses better understand and manage their social media presence across multiple platforms. This dashboard provides real-time analytics and engagement metrics.",
+    "title": "Netflix Clone",
+    "subtitle": "Streaming UI Replica",
+    "description": "A React-based platform inspired by Netflix’s UI/UX, providing row-based content, dynamic banners, and a responsive design.",
+    "story": "The Netflix Clone project was initiated to deepen my understanding of React, API integrations, and responsive UI. Leveraging Tailwind CSS and the TMDB API, it evolved into a functional prototype that showcases popular and trending titles, giving users a streamlined experience to browse, select, and preview content.",
     "features": [
-      "Cross-platform analytics",
-      "Engagement tracking",
-      "Content scheduling",
-      "Automated reporting",
-      "Sentiment analysis"
+      "Row-based UI for multiple categories",
+      "Featured banner with highlighted content",
+      "Responsive design with Tailwind CSS",
+      "Movie data fetching from TMDB",
+      "Potential expansions: search, trailer pop-ups, user authentication"
     ],
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/Netflix.png",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400"
+      "/images/Netflix_SignUp.png",
+      "/images/Netflix_Cat.png",
+      "/images/Netflix_Movie.png",
+      "/images/Netflix_Trailer.png"
     ],
-    "technologies": ["Vue.js", "GraphQL", "Node.js", "PostgreSQL", "Redis"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "TMDB API",
+      "React Router DOM"
+    ],
+    "demoLink": "https://netflix-clone-nine-mauve.vercel.app/",
+    "sourceLink": "https://github.com/Adarshnm02/Netflix_Clone"
   },
   {
     "id": "4",
-    "title": "Virtual Classroom",
-    "subtitle": "Interactive learning platform",
-    "description": "Real-time virtual classroom with interactive features.",
-    "story": "Developed during the pandemic to facilitate remote learning, this platform provides an immersive virtual classroom experience with real-time interaction capabilities.",
+    "title": "OLX Clone",
+    "subtitle": "Buy & Sell Platform",
+    "description": "A modern web application for buying and selling products, featuring category-based browsing, detailed product views, and secure user authentication.",
+    "story": "The OLX Clone project was initiated to explore full-stack development focused on user-generated content and real-time data. With React and Tailwind CSS for the front-end and Firebase for secure authentication and data storage, it evolved into a platform that seamlessly handles product listings, image uploads, and user interactions.",
     "features": [
-      "Live video streaming",
-      "Interactive whiteboard",
-      "Breakout rooms",
-      "Resource sharing",
-      "Progress tracking"
+      "Category-based product browsing",
+      "Detailed product views with images and descriptions",
+      "User authentication (login/registration) via Firebase",
+      "Product creation and management",
+      "Search functionality and pagination",
+      "Responsive design using Tailwind CSS"
     ],
-    "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/olx.avif",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400"
+      
     ],
-    "technologies": ["React", "WebRTC", "Socket.io", "Express", "MongoDB"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "Firebase (Auth & Storage)",
+      "React Router DOM"
+    ],
+    "demoLink": "LIVE_DEMO_NOT_AVAILABLE",
+    "sourceLink": "https://github.com/Adarshnm02/Olx_Clone"
   },
   {
     "id": "5",
-    "title": "Smart Home Hub",
-    "subtitle": "IoT device management system",
-    "description": "Centralized smart home device control and automation.",
-    "story": "Built to simplify smart home device management, this hub provides a unified interface for controlling and automating various IoT devices throughout the home.",
+    "title": "Personal Portfolio",
+    "subtitle": "Showcase of My Work and Skills",
+    "description": "A responsive React-based website to highlight my projects, technical skills, and professional background, deployed on Vercel.",
+    "story": "This portfolio began as a way to unify all my projects—TechWiz, DishDiary, Netflix Clone, OLX Clone—and provide a central hub for showcasing my abilities. Over time, I refined the UI, added smooth animations, and integrated dynamic content to offer an engaging, professional overview for recruiters and collaborators.",
     "features": [
-      "Device automation",
-      "Energy monitoring",
-      "Voice control",
-      "Scene creation",
-      "Security management"
+      "Fully responsive layout using React and Tailwind CSS",
+      "Project listing with detailed descriptions and live demos",
+      "Smooth animations and transitions for a modern user experience",
+      "Contact section for direct inquiries",
+      "Deployed on Vercel for fast and reliable hosting"
     ],
-    "image": "https://images.unsplash.com/photo-1558002038-bb4237b29133?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/Protfolio1.png",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1558002038-bb4237b29133?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=400"
+      "/images/Protfolio2.png",
+      "/images/Protfolio3.png",
+      "/images/Protfolio4.png",
+      "/images/Protfolio5.png"
     ],
-    "technologies": ["React Native", "Node.js", "MQTT", "MongoDB", "Redis"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "React Router DOM",
+      "Framer Motion",
+      "Vercel"
+    ],
+    "demoLink": "https://adarshnm.vercel.app/",
+    "sourceLink": "https://github.com/Adarshnm02/Portfolio"
   },
   {
     "id": "6",
-    "title": "Financial Analytics",
-    "subtitle": "Investment tracking platform",
-    "description": "Advanced financial analytics and portfolio management.",
-    "story": "Designed for investors and financial advisors, this platform provides comprehensive analytics and visualization tools for making informed investment decisions.",
+    "title": "Blog-Platform",
+    "subtitle": "React-Based Blogging System",
+    "description": "A modern platform enabling users to create, read, update, and delete blog posts with a responsive, user-friendly interface.",
+    "story": "This project began as a simple blog site but evolved into a full-featured platform. It showcases CRUD operations for posts, dynamic routing for individual blog pages, and an intuitive editor for creating engaging content. By focusing on scalability and ease of use, it serves as a solid foundation for future features like user authentication, commenting, or advanced SEO.",
     "features": [
-      "Portfolio tracking",
-      "Risk analysis",
-      "Market predictions",
-      "Custom alerts",
-      "Report generation"
+      "CRUD functionality for blog posts",
+      "Responsive UI using React and Tailwind CSS",
+      "Dynamic routing for individual post pages",
+      "Rich text editor for creating styled blog entries",
+      "Potential for user authentication and commenting"
     ],
-    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1600",
+    "image": "/images/Blog_Home.png",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=400"
+      "/images/Blog_SignUp.png",
+      "/images/Blog_Detials.png",
+      "/images/Blog_Create.png"
     ],
-    "technologies": ["Angular", "D3.js", "Python", "FastAPI", "TimescaleDB"],
-    "demoLink": "https://demo.example.com",
-    "sourceLink": "https://github.com/example/project"
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "React Router DOM",
+      "Node/Express or Firebase (if applicable)",
+      "Optional: Redux, Markdown Editor, etc."
+    ],
+    "demoLink": "LIVE_DEMO_NOT_AVAILABLE",
+    "sourceLink": "https://github.com/Adarshnm02/Blog-Platform"
+  },
+  {
+    "id": "7",
+    "title": "News App",
+    "subtitle": "Real-Time News Aggregator",
+    "description": "A modern web application that fetches and displays the latest news from multiple sources, offering category-based filtering, search functionality, and a responsive design.",
+    "story": "Originally a personal aggregator for staying updated with current events, the News App evolved into a fully functional platform. It leverages an external news API to fetch headlines and articles in real time, categorizing them for quick access. By focusing on usability and responsiveness, it delivers a streamlined experience for users looking to stay informed.",
+    "features": [
+      "Category-based news filtering (e.g., technology, sports, business)",
+      "Real-time article fetching from an external news API",
+      "Search functionality to find specific articles or keywords",
+      "Responsive design ensuring a smooth experience across devices",
+      "Potential for pagination or infinite scroll for browsing archives"
+    ],
+    "image": "/images/News_Digest_Home-Page.png",
+    "thumbnails": [
+      "/images/News_Digest_Home-Page.png",
+      "/images/News_Digest_Modal.png"
+    ],
+    "technologies": [
+      "React",
+      "Fetch",
+      "News API",
+      "TailwindCSS"
+    ],
+    "demoLink": "YOUR_LIVE_DEMO_NOT_AVAILABLE",
+    "sourceLink": "https://github.com/Adarshnm02/News-App"
   }
+  
 ]
