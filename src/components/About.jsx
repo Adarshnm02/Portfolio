@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { FileText, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const About = forwardRef((props, ref) => {
@@ -51,7 +51,7 @@ const About = forwardRef((props, ref) => {
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
         <a 
-          href="/Adarsh_NM.pdf"
+          href="/Adarsh_NM_Full-stack_Developer.pdf"
           className="group flex items-center gap-2 border border-[#64ffda] text-[#64ffda] rounded px-6 py-3 hover:bg-[#64ffda]/10 transition-colors"
         >
           <FileText className="w-5 h-5" />

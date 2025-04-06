@@ -1,7 +1,7 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 
-
-const AboutMe = forwardRef((props, ref) => {
+// eslint-disable-next-line react/display-name
+const AboutMe = forwardRef((_, ref) => {
   return (
     <div
       id="aboutSection"
@@ -30,7 +30,7 @@ const AboutMe = forwardRef((props, ref) => {
               <span className="text-gray-400 ">
                 Hello! My name is Adarsh NM, and I&apos;m a passionate{" "}
                 <span className="text-blue-400">MERN Stack Developer</span> with
-                strong problem-solving skills. I completed my{" "}
+                strong problem solving skills. I completed my{" "}
                 <span className="text-blue-400">
                   Bachelor&apos;s degree in BSc Electronics
                 </span>
@@ -82,23 +82,21 @@ const AboutMe = forwardRef((props, ref) => {
 
             <div className="absolute w-5/6 h-5/6  rounded overflow-hidden">
               <img
-                src={
-                  "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                }
-                className={"object-cover rounded-lg w-full h-full"}
+                src={"./Profile_Photo_bg.jpg"}
+                className={"object-cover rounded-lg w-full h-fit"}
                 alt="My Image Not Found"
               />
             </div>
           </div>
+
+          
           {/* // ?Image in Mobile */}
           <div className=" relative w-full h-48 md:hidden  flex justify-center items-center">
             <div className="absolute w-48 h-full  rounded  translate-x-5 translate-y-5 border-2"></div>
-            <div className="absolute w-48 h-full rounded overflow-hidden">
+            <div className="absolute w-48 h-full pt-1 rounded overflow-hidden">
               <img
-                src={
-                  "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                }
-                className={"object-cover rounded-lg w-full h-full"}
+                src={"./Profile_Photo_bg.jpg"}
+                className={"object-cover rounded-lg w-full h-fit"}
                 alt="My Image Not Found"
               />
             </div>
@@ -110,3 +108,10 @@ const AboutMe = forwardRef((props, ref) => {
 });
 
 export default AboutMe;
+// src={
+//   "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+// }
+
+// src={
+//   "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+// }

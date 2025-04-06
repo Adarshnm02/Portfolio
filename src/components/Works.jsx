@@ -1,4 +1,4 @@
-import React, { forwardRef, useState, useEffect, useRef } from "react";
+import { forwardRef, useState, useEffect, useRef } from "react";
 import {
   Github,
   ExternalLink,
